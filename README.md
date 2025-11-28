@@ -20,22 +20,22 @@ chmod +x install.sh
 
 Установка мониторинга для сервиса (по умолчанию проверка каждые 30 секунд)
 ```bash
-sudo ./install.sh --url http://localhost:8080 --service myapp
+sudo ./install.sh --url http://localhost:8080/healthz --service myapp
 ```
 
 Установка с кастомным интервалом (например, каждые 15 секунд)
 ```bash
-sudo ./install.sh --url http://localhost:8080 --service myapp --interval 15
+sudo ./install.sh --url http://localhost:8080/healthz --service myapp --interval 15
 ```
 
 Обновление скрипта мониторинга (при правках в самом monitor.sh)
 ```bash
-sudo ./install.sh --url http://localhost:8080 --service myapp --update
+sudo ./install.sh --url http://localhost:8080/healthz --service myapp --update
 ```
 
 Удаление мониторинга конкретного сервиса
 ```bash
-sudo ./install.sh --url http://localhost:8080 --service myapp --delete
+sudo ./install.sh --url http://localhost:8080/healthz --service myapp --delete
 ```
 
 Просмотр дополнительной информации
@@ -56,7 +56,7 @@ sudo ./install.sh --url http://localhost:8080 --service myapp --delete
 
 ## Использование `monitor.sh`
 ```bash
-sudo ./monitor.sh --url http://localhost:8080 --service myapp
+sudo ./monitor.sh --url http://localhost:8080/healthz --service myapp
 ```
 
 Просмотр дополнительной информации
