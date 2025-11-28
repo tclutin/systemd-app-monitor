@@ -153,6 +153,7 @@ EOF
 }
 
 # Функция для создания systemd таймера | будем с помощью него запускать systemd-сервис с нашим основным скриптом
+# Вероятно вместо OnUnitActiveSec=${CHECK_INTERVAL}sec стоило использовать OnCalendar=..., все же не часто трогаю systemd-timer
 create_timer() {
     log INFO "Создаем systemd таймер $TIMER_NAME..."
     sudo tee /etc/systemd/system/$TIMER_NAME > /dev/null <<EOF
